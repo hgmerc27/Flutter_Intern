@@ -7,9 +7,9 @@
 
 ### Some informations about the virtual machine in the development process
 
-Name: Pixel 7 Pro
-API level: 30
-Android 11 ("R")
-Encoding: UTF-8
-Resolution (px): 1440 x 3120
+Name: Pixel 7 Pro </br>
+API level: 30 </br>
+Android 11 ("R") </br>
+Encoding: UTF-8 </br>
+Resolution (px): 1440 x 3120 </br>
 
