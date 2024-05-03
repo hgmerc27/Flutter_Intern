@@ -1,4 +1,7 @@
-# flutter_application_3
+# Nguyễn Doãn Hoàng Giang
+## ECommerce_App_UI
+
+[Figma](https://www.figma.com/file/ZQpKypXRzhUHjmFazbpVxI/eCommerce-App-UI?type=design&node-id=0-1&mode=design&t=eEBumosNvHv1dp8R-0)
 
 A new Flutter project.
 
