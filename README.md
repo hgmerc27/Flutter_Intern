@@ -3,17 +3,13 @@
 
 [Based on this Figma](https://www.figma.com/file/ZQpKypXRzhUHjmFazbpVxI/eCommerce-App-UI?type=design&node-id=0-1&mode=design&t=eEBumosNvHv1dp8R-0)
 
-A new Flutter project.
-
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Some informations about the virtual machine in the development process
 
-A few resources to get you started if this is your first Flutter project:
+Name: Pixel 7 Pro
+API level: 30
+Android 11 ("R")
+Encoding: UTF-8
+Resolution (px): 1440 x 3120
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
