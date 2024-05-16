@@ -42,7 +42,6 @@ class _HomePageState extends State<HomePage> {
       'title': 'Regular pink',
       'subtitle': 'PKR 2,000'
     },
-
     {
       'image': 'assets/regular_black.png',
       'title': 'Regular black',
@@ -55,38 +54,42 @@ class _HomePageState extends State<HomePage> {
       _selectedIndexIcon = index;
     });
     if (index == 2) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => CartPage()),
-    );
-  }
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => CartPage()),
+      );
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle(statusBarColor: Colors.transparent),
-      child: Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
+        value: SystemUiOverlayStyle(statusBarColor: Colors.transparent),
+        child: Scaffold(
+          body: SingleChildScrollView(
+            child: Column(children: <Widget>[
               Row(
                 children: [
                   Container(
-                    padding: EdgeInsets.only(left: 16.0, top: 20.0),
+                    padding: EdgeInsets.only(
+                        left: MediaQuery.of(context).size.width * 0.05,
+                        top: MediaQuery.of(context).size.height * 0.07,
+                        right: MediaQuery.of(context).size.width * 0.05),
                     child: Text(
                       'Discover',
                       style: TextStyle(
-                        fontFamily: 'GeneralSans-SemiBold',
+                        fontFamily: 'GeneralSans',
+                        fontWeight: FontWeight.w700,
                         fontSize: 32.0,
                         letterSpacing: -1.0,
                         color: Colors.black,
                       ),
                     ),
                   ),
-                  SizedBox(width: 220.0),
+                  SizedBox(width: MediaQuery.of(context).size.width * 0.5),
                   Container(
-                    padding: EdgeInsets.only(top: 20.0),
+                    padding: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.07),
                     child: Image.asset('assets/noti.png'),
                   ),
                 ],
@@ -94,13 +97,15 @@ class _HomePageState extends State<HomePage> {
               Row(
                 children: [
                   Container(
-                    padding: EdgeInsets.only(right: 10.0, top: 15.0, left: 20.0),
-                    width: 330,
+                    padding:
+                        EdgeInsets.only(right: 10.0, top: 15.0, left: 20.0),
+                    width: MediaQuery.of(context).size.width * 0.8,
                     child: TextFormField(
                       decoration: InputDecoration(
                         hintText: 'Search anything',
                         hintStyle: TextStyle(
-                          fontFamily: 'GeneralSans-Regular',
+                          fontFamily: 'GeneralSans',
+                          fontWeight: FontWeight.w400,
                           fontSize: 16.0,
                           color: Colors.black.withOpacity(0.6),
                         ),
@@ -110,12 +115,13 @@ class _HomePageState extends State<HomePage> {
                           borderSide: BorderSide.none,
                           borderRadius: BorderRadius.circular(12.0),
                         ),
-                        contentPadding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0),
+                        contentPadding: EdgeInsets.symmetric(
+                            vertical: 15.0, horizontal: 20.0),
                         prefixIcon: Padding(
                           padding: EdgeInsets.only(left: 5.0),
                           child: SizedBox(
                             width: 10.0,
-                            height: 10.0,
+                            height: 20.0,
                             child: Image.asset('assets/search.png'),
                           ),
                         ),
@@ -127,7 +133,7 @@ class _HomePageState extends State<HomePage> {
                     decoration: BoxDecoration(
                       color: Colors.black,
                       border: Border.all(
-                        color: Colors.black, 
+                        color: Colors.black,
                         width: 2.0,
                       ),
                       borderRadius: BorderRadius.circular(7.0),
@@ -138,13 +144,15 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-              SizedBox(height: 12.0),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.01),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: List.generate(4, (index) {
                   return TextButton(
                     style: TextButton.styleFrom(
-                      backgroundColor: selectedIndex == index ? Colors.black : Colors.grey[200],
+                      backgroundColor: selectedIndex == index
+                          ? Colors.black
+                          : Colors.grey[200],
                       padding: EdgeInsets.all(8.0),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5.0),
@@ -159,7 +167,9 @@ class _HomePageState extends State<HomePage> {
                       buttonNames[index],
                       style: TextStyle(
                         fontSize: 16.0,
-                        color: selectedIndex == index ? Colors.white : Colors.black,
+                        color: selectedIndex == index
+                            ? Colors.white
+                            : Colors.black,
                       ),
                     ),
                   );
@@ -167,77 +177,80 @@ class _HomePageState extends State<HomePage> {
               ),
               Padding(
                 //height: MediaQuery.of(context).size.height,
-                padding: EdgeInsets.only(right: 15.0, left: 15.0),
+                padding: EdgeInsets.only(
+                    right: MediaQuery.of(context).size.width * 0.05,
+                    left: MediaQuery.of(context).size.width * 0.05),
                 child: GridView.builder(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     childAspectRatio: 3 / 4,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 8,
+                    crossAxisSpacing: 5,
+                    //mainAxisSpacing: 3,
                   ),
                   itemCount: images.length,
                   itemBuilder: (context, index) {
-                    
                     return Column(
                       children: <Widget>[
                         GestureDetector(
                           onTap: () {
-                            if (images[index]['image'] == 'assets/regular_fit.png') {
+                            if (images[index]['image'] ==
+                                'assets/regular_fit.png') {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => DetailsPage()),
+                                MaterialPageRoute(
+                                    builder: (context) => DetailsPage()),
                               );
                             }
                           },
                           child: Expanded(
-                            child: Image.asset(images[index]['image']!, fit: BoxFit.scaleDown),
+                            child: Image.asset(images[index]['image']!,
+                                fit: BoxFit.scaleDown),
                           ),
                         ),
                         // Expanded(
                         //   child: Image.asset(images[index]['image']!, fit: BoxFit.scaleDown),
                         // ),
-                        Text(images[index]['title']!, style: TextStyle(fontWeight: FontWeight.bold)),
-                        Text(images[index]['subtitle']!, style: TextStyle(color: Colors.grey)),
+                        Text(images[index]['title']!,
+                            style: TextStyle(fontWeight: FontWeight.bold)),
+                        Text(images[index]['subtitle']!,
+                            style: TextStyle(color: Colors.grey)),
                       ],
                     );
                   },
                 ),
-              ), 
-            ]     
-          ),  
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _selectedIndexIcon,
-          backgroundColor: Colors.white,
-          selectedItemColor: Colors.black,
-          unselectedItemColor: Colors.grey,
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Image.asset('assets/home_icon_2.png'),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset('assets/saved_icon_2.png'),
-              label: 'Saved',
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset('assets/cart_icon_2.png'),
-              label: 'Cart',
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset('assets/settings_icon_2.png'),
-              label: 'Settings',
-            ),
-          ],
-          //showSelectedLabels: true,
-          showUnselectedLabels: true,
-          onTap:  _onItemTapped, 
+              ),
+            ]),
+          ),
+          bottomNavigationBar: BottomNavigationBar(
+            currentIndex: _selectedIndexIcon,
+            backgroundColor: Colors.white,
+            selectedItemColor: Colors.black,
+            unselectedItemColor: Colors.grey,
+            items: <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Image.asset('assets/home_icon_2.png'),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset('assets/saved_icon_2.png'),
+                label: 'Saved',
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset('assets/cart_icon_2.png'),
+                label: 'Cart',
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset('assets/settings_icon_2.png'),
+                label: 'Settings',
+              ),
+            ],
+            //showSelectedLabels: true,
+            showUnselectedLabels: true,
+            onTap: _onItemTapped,
             // Handle navigation here.
-          
-        ),
-      )
-    );
+          ),
+        ));
   }
 }
