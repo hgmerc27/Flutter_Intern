@@ -176,10 +176,10 @@ class _HomePageState extends State<HomePage> {
                 }),
               ),
               Padding(
-                //height: MediaQuery.of(context).size.height,
                 padding: EdgeInsets.only(
                     right: MediaQuery.of(context).size.width * 0.05,
-                    left: MediaQuery.of(context).size.width * 0.05),
+                    left: MediaQuery.of(context).size.width * 0.05,
+                    top: MediaQuery.of(context).size.height * 0.02),
                 child: GridView.builder(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
@@ -187,7 +187,7 @@ class _HomePageState extends State<HomePage> {
                     crossAxisCount: 2,
                     childAspectRatio: 3 / 4,
                     crossAxisSpacing: 5,
-                    //mainAxisSpacing: 3,
+                    mainAxisSpacing: 3,
                   ),
                   itemCount: images.length,
                   itemBuilder: (context, index) {
@@ -209,9 +209,6 @@ class _HomePageState extends State<HomePage> {
                                 fit: BoxFit.scaleDown),
                           ),
                         ),
-                        // Expanded(
-                        //   child: Image.asset(images[index]['image']!, fit: BoxFit.scaleDown),
-                        // ),
                         Text(images[index]['title']!,
                             style: TextStyle(fontWeight: FontWeight.bold)),
                         Text(images[index]['subtitle']!,

@@ -224,7 +224,8 @@ class _CartPageState extends State<CartPage> {
                               bottom: 0,
                               child: Padding(
                                 padding: EdgeInsets.only(
-                                    top: 70.0), // Add padding at the bottom
+                                    top: MediaQuery.of(context).size.height *
+                                        0.06),
                                 child: Align(
                                   alignment: Alignment.bottomCenter,
                                   // child: Container(
@@ -236,8 +237,11 @@ class _CartPageState extends State<CartPage> {
                                   // height: 120.0,
                                   child: Center(
                                     child: SizedBox(
-                                      width: 350.0,
-                                      height: 50.0,
+                                      width: MediaQuery.of(context).size.width *
+                                          0.9,
+                                      height:
+                                          MediaQuery.of(context).size.height *
+                                              0.06,
                                       child: ElevatedButton(
                                         onPressed: () {
                                           // Navigator.push(

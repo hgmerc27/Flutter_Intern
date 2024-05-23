@@ -29,11 +29,14 @@ class _DetailsPageState extends State<DetailsPage> {
               child: SingleChildScrollView(
                   child: Column(children: <Widget>[
                 Container(
-                  padding: EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
+                  padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * 0.03,
+                  ),
                   child: Image.asset('assets/detail.png'),
                 ),
                 Container(
-                  padding: EdgeInsets.only(right: 140.0),
+                  padding: EdgeInsets.only(
+                      right: MediaQuery.of(context).size.width * 0.35),
                   child: Text(
                     "Regular fit slogan",
                     style: TextStyle(
@@ -46,7 +49,8 @@ class _DetailsPageState extends State<DetailsPage> {
                 Row(
                   children: <Widget>[
                     Container(
-                      padding: EdgeInsets.only(left: 25.0),
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width * 0.07),
                       child: Image.asset('assets/star_icon.png'),
                     ),
                     Text(
@@ -69,7 +73,10 @@ class _DetailsPageState extends State<DetailsPage> {
                   ],
                 ),
                 Container(
-                  padding: EdgeInsets.only(left: 25.0, right: 10.0, top: 20.0),
+                  padding: EdgeInsets.only(
+                      left: MediaQuery.of(context).size.width * 0.05,
+                      right: MediaQuery.of(context).size.width * 0.05,
+                      top: MediaQuery.of(context).size.height * 0.02),
                   child: Text(
                     'The name says it all, the right size slightly snugs the body leaving enough room for comfort in the sleeves and waist.',
                     style: TextStyle(
